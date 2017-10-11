@@ -1,7 +1,8 @@
 from bancor import bancor
 from bittrex import bittrex
 import time
-bittrex_pub_key='f18a6bdb538f4267'
+from datetime import datetime
+bittrex_pub_key='f18a6bdb57'
 ban=bancor()
 
 bit = bittrex(bittrex_pub_key,'') #bittrex api
@@ -17,5 +18,5 @@ while(True):
 	bitAsk=bitTick['Ask']
 	buyBanSellBit=changePercent(banTick,bitBid)
 	buyBitSellBan=changePercent(bitAsk,banTick)
-	print "Buy BAN-Sell Bit:",buyBanSellBit,"\t","Buy Bit-Sell BAN",buyBitSellBan
+	print datetime.now(),"\tBuy BAN-Sell Bit:",buyBanSellBit,"\t","Buy Bit-Sell BAN",buyBitSellBan
 	time.sleep(2)
